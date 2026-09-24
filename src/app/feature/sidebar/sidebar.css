@@ -1,0 +1,44 @@
+/* Caixa principal da barra lateral */
+.sidebar {
+  width: 220px; /* Define a largura do sidebar */
+
+  min-height: 100vh; /* Ocupa no mínimo toda a altura da tela */
+
+  padding: 24px 16px; /* Espaço interno: 24px vertical e 16px horizontal */
+
+  box-sizing: border-box; /* Inclui o padding dentro dos 220px de largura */
+
+  color: white; /* Cor padrão dos textos dentro do sidebar */
+
+  background-color: #1f2937; /* Cor de fundo do sidebar */
+}
+
+/* Título "Desk" */
+h2 {
+  margin: 0 0 32px; /* Remove margens superiores e deixa 32px abaixo */
+}
+
+/* Área que contém os links */
+nav {
+  display: flex; /* Ativa o Flexbox */
+
+  flex-direction: column; /* Organiza os links verticalmente */
+
+  gap: 8px; /* Cria um espaço de 8px entre os links */
+}
+
+/* Estilo de cada link */
+a {
+  padding: 10px 12px; /* Aumenta a área clicável do link */
+
+  color: white; /* Deixa o texto do link branco */
+
+  text-decoration: none; /* Remove o sublinhado padrão */
+
+  border-radius: 6px; /* Arredonda os cantos do link */
+}
+
+/* Aplicado quando o mouse passa sobre o link */
+a:hover {
+  background-color: #374151; /* Destaca a opção que está sob o mouse */
+}

@@ -1,0 +1,15 @@
+/* Organiza o sidebar e o conteúdo lado a lado */
+.layout {
+  display: flex; /* Coloca os elementos na mesma linha */
+
+  min-height: 100vh; /* Ocupa no mínimo toda a altura da tela */
+}
+
+/* Área disponível para as páginas */
+.conteudo {
+  flex: 1; /* Ocupa todo o espaço restante depois do sidebar */
+
+  padding: 24px; /* Espaçamento interno */
+
+  background-color: #f3f4f6; /* Cor clara para diferenciar do sidebar */
+}

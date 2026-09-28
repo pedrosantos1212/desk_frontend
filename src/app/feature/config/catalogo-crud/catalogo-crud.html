@@ -1,1 +1,38 @@
-<p>catalogo-crud works!</p>
+<h1>{{ titulo() }}</h1>
+<p>Configurações de {{ titulo().toLowerCase() }} do sistema</p>
+
+<form (ngSubmit)="criar()">
+  <!-- Executa o criar() -->
+  <label for="nome">Nome:</label>
+
+  <input id="nome" name="nome" type="text" [(ngModel)]="nome" required maxlength="45" />
+  <button type="submit">Cadastrar</button>
+  <p>Valor digitado: {{ nome }}</p>
+</form>
+
+<ul>
+  <!-- track ajuda a identificar cada item -->
+  @for (item of itens(); track item.id) {
+    <li>
+      {{ item.nome }} - {{ item.status ? 'Ativo' : 'Inativo' }}
+
+      <button type="button" (click)="desativar(item.id)" [disabled]="!item.status">
+        {{ item.status ? 'Desativar' : 'Desativado' }}
+      </button>
+      <button type="button" (click)="reativar(item.id)" [disabled]="item.status">
+        {{ item.status ? 'Já ativado' : 'Reativar' }}
+      </button>
+      @if (idEdicao() === item.id) {
+        <input type="text" [(ngModel)]="nomeEmEdicao" maxlength="45" />
+
+        <button type="button" (click)="salvarEdicao()">Salvar</button>
+
+        <button type="button" (click)="cancelarEdicao()">Cancelar</button>
+      } @else {
+        <button type="button" (click)="iniciarEdicao(item)">Editar</button>
+      }
+    </li>
+  } @empty {
+    <li>Nenhum registro encontrado.</li>
+  }
+</ul>

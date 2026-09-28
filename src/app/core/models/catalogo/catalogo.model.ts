@@ -5,13 +5,10 @@ export interface Catalogo {
 }
 
 export interface CatalogoCreate {
-  id?: number;
   nome: string;
-  status?: boolean;
 }
 
 export interface CatalogoUpdate {
-  id: number;
   nome?: string;
   status?: boolean;
 }

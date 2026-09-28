@@ -1,4 +1,42 @@
-<h1>
-    Locais
-</h1>
+<h1>Locais</h1>
 <p>Configurações dos locais do sistema</p>
+
+<form (ngSubmit)="criar()">
+  <!-- Executa o criar() -->
+  <label for="nome">Nome do local:</label>
+
+  <input id="nome" name="nome" type="text" [(ngModel)]="nome" required maxlength="45" />
+  <button type="submit">Cadastrar</button>
+  <p>Valor digitado: {{ nome }}</p>
+</form>
+
+<ul>
+  <!-- track ajuda a indentificar cada item -->
+  @for (local of locais(); track local.id) {
+    <li>
+      {{ local.nome }} - {{ local.status ? 'Ativo' : 'Inativo' }}
+
+      <button type="button" (click)="desativar(local.id)" [disabled]="!local.status">
+        {{ local.status ? 'Desativar' : 'Desativado' }}
+      </button>
+      <button type="button" (click)="reativar(local.id)" [disabled]="local.status">
+        {{ local.status ? 'Já ativado' : 'Reativar' }}
+      </button>
+      @if (idEdicao() === local.id) {
+        <input type="text" [(ngModel)]="nomeEmEdicao" maxlength="45" />
+
+        <button type="button" (click)="salvarEdicao()">Salvar</button>
+
+        <button type="button" (click)="cancelarEdicao()">Cancelar</button>
+      } @else {
+        <!-- <span>
+                    {{local.nome}} - {{local.status ? 'Ativado' : 'Inativado'}}
+                </span> -->
+
+        <button type="button" (click)="iniciarEdicao(local)">Editar</button>
+      }
+    </li>
+  } @empty {
+    <li>Nenhum local encontrado.</li>
+  }
+</ul>

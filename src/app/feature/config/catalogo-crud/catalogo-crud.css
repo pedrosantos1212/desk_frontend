@@ -34,41 +34,28 @@ form {
 /* texto que mostra o valor digitado */
 form p {
     width: 100%; /* faz o texto ocupar uma linha inteira */
-
     margin: 0; /* remove a margem padrao do paragrafo */
-
     color: #6b7280; /* usa uma cor de texto secundario */
 }
 
 /* remove o estilo padrao e organiza a lista */
 ul {
     display: grid; /* organiza os registros em linhas */
-
     gap: 12px; /* cria espaco entre os registros */
-
     padding: 0; /* remove o recuo padrao */
-
     margin: 0; /* remove a margem padrao */
-
     list-style: none; /* remove as bolinhas */
 }
 
 /* organiza cada registro */
 li {
     display: flex; /* coloca texto e botoes na mesma linha */
-
     align-items: center; /* alinha os elementos verticalmente */
-
     gap: 10px; /* separa os botoes e o texto */
-
     flex-wrap: wrap; /* quebra a linha de forma organizada se necessario */
-
     padding: 16px; /* cria espaco dentro do registro */
-
     background-color: white; /* cria o fundo do cartao */
-
     border-radius: 8px; /* arredonda os cantos */
-
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%); /* adiciona uma sombra leve */
 }
 
@@ -97,17 +84,11 @@ input:focus {
 /* estilo padrao dos botoes */
 button {
     padding: 9px 14px; /* aumenta a area clicavel */
-
     color: white; /* define a cor do texto */
-
     background-color: #374151; /* usa uma cor proxima ao sidebar */
-
     border: 0; /* remove a borda padrao */
-
     border-radius: 6px; /* arredonda os cantos */
-
     font: inherit; /* usa a mesma fonte da aplicacao */
-
     cursor: pointer; /* mostra a mao ao passar sobre o botao */
 }
 
@@ -119,8 +100,6 @@ button:hover:not(:disabled) {
 /* aparencia dos botoes desabilitados */
 button:disabled {
     color: #6b7280; /* deixa o texto cinza */
-
     background-color: #e5e7eb; /* usa um fundo cinza claro */
-
     cursor: not-allowed; /* mostra que o botao nao pode ser usado */
 }

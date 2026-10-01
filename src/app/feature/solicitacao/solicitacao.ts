@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { SolicitacaoCreate } from '../../core/models/solicitacao/solicitacao.model';
+import { SolicitacaoService } from '../../core/services/solicitacao/solicitacao.service';
 
 @Component({
   imports: [],
@@ -6,4 +8,23 @@ import { Component } from '@angular/core';
   styleUrl: './solicitacao.css',
   templateUrl: './solicitacao.html',
 })
-export class Solicitacao {}
+export class Solicitacao implements OnInit{
+
+  solicitacoes = signal<Solicitacao[]>([])
+
+  constructor(
+    private readonly solicitacaoService:SolicitacaoService,
+  ){}
+
+  ngOnInit(): void {
+    this.solicitacaoService.listar().subscribe({
+      next: (dados) => {
+        this.solicitacoes.set(dados)
+      },
+      error: (erro) => {
+        console.error('Erro ao buscar solicitacoes: ', erro)
+      }
+    })
+  }
+
+}

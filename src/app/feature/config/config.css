@@ -1,44 +1,29 @@
 .config {
     display: flex; /* ativa o flexbox */
-
     flex-direction: column; /* organiza o conteudo verticalmente */
-
     align-items: stretch; /* faz os elementos ocuparem a largura disponivel */
-
     gap: 12px;
-
     padding: 20px;
-
     margin-bottom: 24px;
-
     background-color: white;
-
     border-radius: 8px;
-
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
 }
 
 /* area que contem as opcoes de configuracao */
 .config-selecao {
     display: flex; /* ativa o flexbox */
-
     flex-direction: column; /* coloca um link abaixo do outro */
-
     gap: 12px; /* cria espaco entre os links */
 }
 
 /* estilo de cada opcao de configuracao */
 .config-selecao a {
     padding: 14px 16px; /* aumenta a area clicavel */
-
     color: white; /* deixa o texto branco */
-
     background-color: #374151; /* usa a mesma cor dos botoes */
-
     border-radius: 6px; /* arredonda os cantos */
-
     text-align: left; /* alinha o texto a esquerda */
-
     text-decoration: none; /* remove o sublinhado do link */
 }
 

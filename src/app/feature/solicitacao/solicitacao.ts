@@ -1,5 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { SolicitacaoCreate } from '../../core/models/solicitacao/solicitacao.model';
+import {
+  Solicitacao as SolicitacaoModel,
+} from '../../core/models/solicitacao/solicitacao.model';
 import { SolicitacaoService } from '../../core/services/solicitacao/solicitacao.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { SolicitacaoService } from '../../core/services/solicitacao/solicitacao.
 })
 export class Solicitacao implements OnInit{
 
-  solicitacoes = signal<Solicitacao[]>([])
+  solicitacoes = signal<SolicitacaoModel[]>([])
 
   constructor(
     private readonly solicitacaoService:SolicitacaoService,
